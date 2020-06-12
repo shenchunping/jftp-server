@@ -1,0 +1,36 @@
+ftp:
+  port: 3131
+  passive-ports: 2000-2500
+  home: /Users/shenchunping/ftp
+
+server:
+  tomcat:
+    port: 8080
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /
+    session:
+      timeout: 20M
+  compression:
+    enabled: true
+
+logging:
+  config: classpath:logback.xml
+
+mybatis:
+  config-location: classpath:mybatis.xml
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    throw-exception-if-no-handler-found: true
+    static-path-pattern: /**
+    view:
+      prefix: /static
+      suffix: .html
+  datasource:
+    url: jdbc:mysql://192.168.124.80:3306/ftp?serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
