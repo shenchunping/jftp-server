@@ -16,5 +16,5 @@ public interface UserService {
 
     String resetPwd(String userId);
 
-    void delete(String userId);
+    void delete(String userId, boolean delFiles);
 }

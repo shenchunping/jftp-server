@@ -2,9 +2,60 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>关于</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./libs/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./libs/common.css">
+    <title>关于-JFTP</title>
 </head>
 <body>
+<div id="app">
+    <el-container>
+        <el-header>
+            <el-link href="./users.html">用户</el-link>
+            <el-link href="./admins.html">管理员</el-link>
+            <el-link href="./about.html">关于</el-link>
+        </el-header>
+        <el-main>
+            <el-card class="box-card">
+                <div slot="header" class="clearfix">
+                    <span>关于JFTP</span>
+                </div>
+                <div>
+                    JFTP是基于Apache FTP Server的开源服项目。支持动态管理用户，可视化操作，简单易用。
+                </div>
+                <br/>
+                <div>
+                    项目地址:
+                    <el-link href="https://github.com/shenchunping/jftp-server" type="primary" target="project">
+                        https://github.com/shenchunping/jftp-server
+                    </el-link>
+                </div>
+                <div>
 
+                </div>
+            </el-card>
+
+        </el-main>
+    </el-container>
+</div>
 </body>
+<script src="./libs/vue.js"></script>
+<script src="./libs/axios.min.js"></script>
+<script src="./libs/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            form: {
+                username: '',
+                password: ''
+            }
+        },
+        methods: {
+            onSubmit() {
+
+            }
+        }
+    })
+</script>
 </html>

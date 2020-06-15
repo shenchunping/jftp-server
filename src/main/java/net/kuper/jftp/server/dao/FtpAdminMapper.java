@@ -12,5 +12,7 @@ public interface FtpAdminMapper {
 
     List<FtpAdmin> selectAll();
 
+    FtpAdmin selectByAccount(String account);
+
     int updateByPrimaryKey(FtpAdmin record);
 }

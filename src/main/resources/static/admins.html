@@ -2,9 +2,45 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>管理员-JFtp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./libs/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./libs/common.css">
+    <title>管理员-JFTP</title>
 </head>
 <body>
 
+<div id="app">
+    <el-container>
+        <el-header>
+            <el-link href="./users.html">用户</el-link>
+            <el-link href="./admins.html">管理员</el-link>
+            <el-link href="./about.html">关于</el-link>
+        </el-header>
+        <el-main>Main</el-main>
+    </el-container>
+</div>
 </body>
+<script src="./libs/vue.js"></script>
+<script src="./libs/axios.min.js"></script>
+<script src="./libs/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: "#app",
+        data: {},
+        methods: {
+            queryList() {
+
+            },
+            query(id) {
+                axios
+                    .get('/admin/' + id)
+                    .then(function (response) {
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+            }
+        }
+    })
+</script>
 </html>

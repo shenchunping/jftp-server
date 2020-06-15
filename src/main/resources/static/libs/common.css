@@ -1,0 +1,20 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.el-header > a{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.el-main {
+    background-color: #E9EEF3;
+    color: #333;
+}

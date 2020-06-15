@@ -2,9 +2,83 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>用户-JFtp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./libs/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./libs/common.css">
+    <title>用户-JFTP</title>
 </head>
 <body>
+<div id="app">
+    <el-container>
+        <el-header>
+            <el-link href="./users.html">用户</el-link>
+            <el-link href="./admins.html">管理员</el-link>
+            <el-link href="./about.html">关于</el-link>
+        </el-header>
+        <el-main>
 
+            <el-table
+                    :data="tableData"
+                    border
+                    style="width: 100%">
+                <el-table-column
+                        prop="date"
+                        label="日期"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        prop="name"
+                        label="姓名"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        prop="address"
+                        label="地址">
+                </el-table-column>
+            </el-table>
+        </el-main>
+    </el-container>
+
+    <el-dialog
+            title="提示"
+            :visible.sync="dialogVisible"
+            width="30%"
+            :before-close="handleClose">
+        <span>这是一段信息</span>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+    </el-dialog>
+</div>
 </body>
+<script src="./libs/vue.js"></script>
+<script src="./libs/axios.min.js"></script>
+<script src="./libs/element-ui/lib/index.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            form: {
+                username: '',
+                password: ''
+            }
+        },
+        methods: {
+            queryList() {
+                axios
+                    .get('/user', {
+                        params: this.form
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+            }
+        }
+    })
+</script>
+
 </html>

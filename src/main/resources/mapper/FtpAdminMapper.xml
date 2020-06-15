@@ -41,4 +41,8 @@
     select id, account, `password`, salt, `enable`, update_time, create_time
     from FTP_ADMIN
   </select>
+  <select id="selectByAccount" resultMap="BaseResultMap">
+    select id, account, `password`, salt, `enable`, update_time, create_time
+    from FTP_ADMIN where account = #{value}
+  </select>
 </mapper>

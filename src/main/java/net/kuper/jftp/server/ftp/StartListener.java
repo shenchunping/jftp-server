@@ -8,7 +8,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
+//@Component
 public class StartListener implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     private JFtpServer server;

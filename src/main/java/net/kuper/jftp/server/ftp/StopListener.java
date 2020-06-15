@@ -7,7 +7,7 @@ import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
+//@Component
 public class StopListener implements ApplicationListener<ContextClosedEvent> {
     @Autowired
     private JFtpServer server;

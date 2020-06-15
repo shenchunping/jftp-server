@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>登录-JFtp</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./libs/element-ui/lib/theme-chalk/index.css">
+    <title>登录-JFTP</title>
 </head>
 <body>
 <div id="app">
     <el-form ref="loginForm" :model="form" :rules="rules" label-width="80px" class="login-box">
-        <h3 class="login-title">欢迎登录</h3>
+        <h3 class="login-title">登录JFTP-Server</h3>
         <el-form-item label="账号" prop="username">
             <el-input type="text" placeholder="请输入管理员账号" v-model="form.username"/>
         </el-form-item>
@@ -23,6 +23,7 @@
 </div>
 </body>
 <script src="./libs/vue.js"></script>
+<script src="./libs/axios.min.js"></script>
 <!-- 引入组件库 -->
 <script src="./libs/element-ui/lib/index.js"></script>
 <script type="text/javascript">
@@ -37,13 +38,24 @@
         methods: {
             onSubmit() {
 
+            },
+            login() {
+                axios
+                    .post('/admin/login', {
+                        data: this.form
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
             }
         }
     })
 </script>
 
 <style type="text/css">
-
     .login-box {
         border: 1px solid #DCDFE6;
         width: 350px;
